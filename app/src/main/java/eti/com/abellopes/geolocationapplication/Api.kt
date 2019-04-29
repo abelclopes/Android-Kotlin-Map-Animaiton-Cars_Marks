@@ -21,9 +21,19 @@ class NetworkUtils {
         }
     }
 }
+interface ApiInterface {
+    @GET("drivers/")
+    fun getDrivers(): Call<DriversResponse>
 
-interface Endpoint {
+    companion object Factory {
+        val BASE_URL = "https://private-fdb8bc-sohaferiageolocation.apiary-mock.com/"
+        fun create(): ApiInterface {
+            val retrofit = Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            return retrofit.create(ApiInterface::class.java)
+        }
+    }
 
-    @GET("/drivers/")
-    fun getDrivers() : Call<DriversResponse>
 }
