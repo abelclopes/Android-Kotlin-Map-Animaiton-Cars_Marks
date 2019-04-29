@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GeoLocation Application</string>
+    <string name="hello">hello</string>
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">AIzaSyCSUPn-IYswPFU1OK11kSIPmpdWcsSjfno</string>
+    <string name="unavailable_service">Abilitar servico api, esta inativo</string>
+</resources>
